@@ -1,5 +1,5 @@
 const request = require('request');
-const breedName = process.argv[2];
+//const breedName = process.argv[2];
 
 const fetchBreedDescription = function (breedName, callback) {
 
@@ -14,8 +14,8 @@ const fetchBreedDescription = function (breedName, callback) {
     }
     const data = JSON.parse(body);
     if (data[0] === undefined) {
-      console.log('breed not found')
-      return
+      // console.log('breed not found')
+      return callback('breed not found', null)
     } else {
       const breed = data[0]
       // console.log(breed)
